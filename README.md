@@ -1,2 +1,2 @@
 # desk_translation
-a
+an application for translating the words on desktop
