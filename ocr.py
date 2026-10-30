@@ -2,11 +2,13 @@ import certifi
 import easyocr
 import os
 
-os.environ["SSL_CERT_FILE"] = certifi.where()
-os.environ['REQUESTS_CA_BUNDLE'] = certifi.where()
 
-reader = easyocr.Reader(['ch_sim','en'])
+if __name__ == '__main__':
+    os.environ["SSL_CERT_FILE"] = certifi.where()
+    os.environ['REQUESTS_CA_BUNDLE'] = certifi.where()
 
-result = reader.readtext("./output/screenshot.jpg")
+    reader = easyocr.Reader(['ch_sim','en'])
 
-print(result)
+    result = reader.readtext("./output/screenshot.jpg")
+
+    print(result)
